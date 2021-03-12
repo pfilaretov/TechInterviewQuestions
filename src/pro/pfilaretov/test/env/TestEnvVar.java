@@ -3,12 +3,10 @@ package pro.pfilaretov.test.env;
 /**
  *
  */
-public class TestEnvVar
-{
-    public static void main(String[] args)
-    {
-        if (args.length != 1)
-        {
+public class TestEnvVar {
+
+    public static void main(String[] args) {
+        if (args.length != 1) {
             System.err.println("provide an env var name");
             System.exit(1);
         }

@@ -7,31 +7,24 @@ import java.net.Socket;
  *
  */
 public class SocketObjectsTest {
+
     private Socket socket;
 
-    public void run() throws IOException
-    {
+    public void run() throws IOException {
         socket = getSocket();
-        if (socket != null)
-        {
+        if (socket != null) {
             socket.close();
         }
 
     }
 
-    public Socket getSocket() throws IOException
-    {
+    public Socket getSocket() throws IOException {
         Socket newSocket = null;
-        try
-        {
+        try {
             newSocket = new Socket("localhost", 50018);
-        }
-        catch (IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
-        }
-        finally
-        {
+        } finally {
             if (newSocket != null) {
                 newSocket.close();
             }
@@ -40,8 +33,7 @@ public class SocketObjectsTest {
         return newSocket;
     }
 
-    public static void main(String[] args) throws IOException
-    {
+    public static void main(String[] args) throws IOException {
         SocketObjectsTest test = new SocketObjectsTest();
         while (true) {
             test.run();

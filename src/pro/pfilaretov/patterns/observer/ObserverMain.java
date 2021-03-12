@@ -1,15 +1,14 @@
 package pro.pfilaretov.patterns.observer;
 
 /**
- * Main class for Observer pattern
- * https://refactoring.guru/design-patterns/observer
+ * Main class for Observer pattern https://refactoring.guru/design-patterns/observer
  */
 public class ObserverMain {
+
     public static void main(String[] args) throws InterruptedException {
         NewspaperPublisher publisher = new NewspaperPublisher();
 
         System.out.println("Publisher is ready");
-
 
         Subscriber john = new HumanSubscriber("John Smith");
         publisher.addSubscriber(john, Newspaper.EXTRA_BALT);

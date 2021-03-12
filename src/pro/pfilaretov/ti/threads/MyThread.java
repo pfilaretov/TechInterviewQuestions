@@ -1,14 +1,13 @@
 package pro.pfilaretov.ti.threads;
 
 public class MyThread extends Thread {
+
     @Override
-    public void run()
-    {
+    public void run() {
         System.out.println(getName() + ": running");
     }
 
-    public static void main(String[] args) throws InterruptedException
-    {
+    public static void main(String[] args) throws InterruptedException {
         MyThread thread = new MyThread();
         thread.start();
 

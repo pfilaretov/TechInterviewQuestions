@@ -3,29 +3,22 @@ package pro.pfilaretov.ti.exceptions;
 /**
  * Check which exception is thrown and which one is suppressed
  */
-public class TryCatchFinallySuppress
-{
-    public static void main(String[] args)
-    {
-        try
-        {
+public class TryCatchFinallySuppress {
+
+    public static void main(String[] args) {
+        try {
             run();
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             System.err.println("=== GOT IT! ===");
             printExceptionInfo(e);
         }
     }
 
-    private static void run()
-    {
-        try
-        {
+    private static void run() {
+        try {
             System.err.println("1");
 
-            if (true)
-            {
+            if (true) {
                 throw new RuntimeException("Oops_try");
             }
 
@@ -43,13 +36,10 @@ public class TryCatchFinallySuppress
 
             System.err.println("4");
 
-        }*/
-        finally
-        {
+        }*/ finally {
             System.err.println("5");
 
-            if (true)
-            {
+            if (true) {
                 throw new RuntimeException("Oops_finally");
             }
 
@@ -57,15 +47,12 @@ public class TryCatchFinallySuppress
         }
     }
 
-    private static void printExceptionInfo(Throwable t)
-    {
+    private static void printExceptionInfo(Throwable t) {
         t.printStackTrace();
 
         Throwable[] suppressed = t.getSuppressed();
-        if (suppressed != null && suppressed.length > 0)
-        {
-            for (Throwable s : suppressed)
-            {
+        if (suppressed != null && suppressed.length > 0) {
+            for (Throwable s : suppressed) {
                 System.err.println("Suppressed: ");
                 s.printStackTrace();
             }

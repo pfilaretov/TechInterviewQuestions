@@ -2,6 +2,7 @@ package pro.pfilaretov.ti.classloading;
 
 
 class A {
+
     static {
         System.out.println("A static block");
     }
@@ -12,6 +13,7 @@ class A {
 }
 
 class B extends A {
+
     static {
         System.out.println("B static block");
     }
@@ -22,6 +24,7 @@ class B extends A {
 }
 
 class C extends B {
+
     {
         System.out.println("C instance block");
     }

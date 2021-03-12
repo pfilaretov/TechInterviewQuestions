@@ -1,12 +1,9 @@
 package pro.pfilaretov.hackerrank;
 
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 public class SockMerchant {
 
@@ -31,8 +28,7 @@ public class SockMerchant {
 
     public static void main(String[] args) throws IOException {
 
-
-        int result = sockMerchant(9, new int[] {10, 20, 20, 10, 10, 30, 50, 10, 20});
+        int result = sockMerchant(9, new int[]{10, 20, 20, 10, 10, 30, 50, 10, 20});
 
         System.out.println("result: " + result);
     }

@@ -7,22 +7,19 @@ import java.util.concurrent.RecursiveTask;
 /**
  * The task to calculate Fibonacci numbers
  */
-public class FibonacciTask extends RecursiveTask<Integer>
-{
+public class FibonacciTask extends RecursiveTask<Integer> {
+
     private int n;
 
-    public FibonacciTask(int n)
-    {
+    public FibonacciTask(int n) {
         this.n = n;
     }
 
     @Override
-    protected Integer compute()
-    {
+    protected Integer compute() {
 //        printPoolDetails();
 
-        if (n <= 1)
-        {
+        if (n <= 1) {
             return n;
         }
 
@@ -33,8 +30,7 @@ public class FibonacciTask extends RecursiveTask<Integer>
         return f2.compute() + f1.join();
     }
 
-    private void printPoolDetails()
-    {
+    private void printPoolDetails() {
         int parallelism = getPool().getParallelism();
         int poolSize = getPool().getPoolSize();
         int activeThreads = getPool().getActiveThreadCount();
@@ -44,7 +40,7 @@ public class FibonacciTask extends RecursiveTask<Integer>
         long steals = getPool().getStealCount();
 
         System.out.println(
-                "parallelism=" + parallelism +
+            "parallelism=" + parallelism +
                 ", poolSize=" + poolSize +
                 ", activeThreads=" + activeThreads +
                 ", runningThreads=" + runningThreads +

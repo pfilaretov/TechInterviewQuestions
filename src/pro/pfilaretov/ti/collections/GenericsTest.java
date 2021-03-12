@@ -8,6 +8,7 @@ import java.util.List;
  *
  */
 public class GenericsTest {
+
     public static void main(String[] args) {
         // 1. ? extends Food
 
@@ -26,7 +27,7 @@ public class GenericsTest {
         // 1.2 Can we get something from foods? And if so what can we get?
         Food food = foods.get(0);
 //        Fruit fruit = foods.get(1); // compilation error
-        Fruit fruit = (Fruit)foods.get(1);
+        Fruit fruit = (Fruit) foods.get(1);
 
         // 1.3 Sort foods
 //        Collections.sort(foods); // compile error, or need to implement Comparable in Food class
@@ -54,6 +55,7 @@ public class GenericsTest {
 }
 
 class Food {
+
     protected final String name;
 
     public Food(String name) {
@@ -66,12 +68,14 @@ class Food {
 }
 
 class Fruit extends Food {
+
     public Fruit(String name) {
         super(name);
     }
 }
 
 class Apple extends Fruit {
+
     public Apple(String name) {
         super(name);
     }

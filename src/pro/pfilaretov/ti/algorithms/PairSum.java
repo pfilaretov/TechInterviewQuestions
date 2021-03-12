@@ -20,10 +20,9 @@ import java.util.Set;
  * - brut force -> O(n^2)
  * - Use Hash Map/Set -> O(n)
  */
-public class PairSum
-{
-    public static void main(String[] args)
-    {
+public class PairSum {
+
+    public static void main(String[] args) {
         List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20);
         int targetSum = 12;
 
@@ -37,18 +36,14 @@ public class PairSum
         System.out.println("result: " + pairs);
     }
 
-    private static List<Pair> findPairsBrutForce(List<Integer> list, int targetSum)
-    {
+    private static List<Pair> findPairsBrutForce(List<Integer> list, int targetSum) {
         List<Pair> result = new ArrayList<>();
         long operationsCount = 0;
 
-        for(int i = 0; i < list.size() - 1; i++)
-        {
-            for(int j = i + 1; j < list.size(); j++)
-            {
+        for (int i = 0; i < list.size() - 1; i++) {
+            for (int j = i + 1; j < list.size(); j++) {
                 operationsCount++;
-                if (list.get(i) + list.get(j) == targetSum)
-                {
+                if (list.get(i) + list.get(j) == targetSum) {
                     result.add(new Pair(list.get(i), list.get(j)));
                 }
             }
@@ -59,25 +54,21 @@ public class PairSum
         return result;
     }
 
-    private static List<Pair> findPairs(List<Integer> list, int targetSum)
-    {
+    private static List<Pair> findPairs(List<Integer> list, int targetSum) {
         List<Pair> result = new ArrayList<>();
         long operationsCount = 0;
 
         Set<Integer> wanted = new HashSet<>();
 
-        for (Integer i : list)
-        {
+        for (Integer i : list) {
             operationsCount++;
             wanted.add(targetSum - i);
         }
         System.out.println("wanted: " + wanted);
 
-        for (Integer i : list)
-        {
+        for (Integer i : list) {
             operationsCount++;
-            if (wanted.contains(i))
-            {
+            if (wanted.contains(i)) {
                 result.add(new Pair(targetSum - i, i));
             }
         }
@@ -106,6 +97,7 @@ public class PairSum
 }
 
 class Pair {
+
     private final int a;
     private final int b;
 
@@ -115,8 +107,7 @@ class Pair {
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return "{" + a + ", " + b + "}";
     }
 }
